@@ -1,8 +1,3 @@
-Get in the right folder to development:
-
-$ cd /home/tiago/Desktop/Udacity/6-Full_stack_web_developer/1-Project_Fyyur/FSND/projects/01_fyyur/starter_code
-
-#############################################################################################
 psql -U <username> -d <database_name> -f <script_name.sql>
 
 Replace <username> with your PostgreSQL username, <database_name> with the 
