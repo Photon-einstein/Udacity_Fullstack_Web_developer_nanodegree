@@ -11,4 +11,4 @@ SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 
 # TODO IMPLEMENT DATABASE URL
-SQLALCHEMY_DATABASE_URI = 'postgresql://postgres:BuddhaHit28284@localhost:5432/project1_db'
+SQLALCHEMY_DATABASE_URI = 'postgresql://postgres:TO_BE_LOCALY_DEFINED@localhost:5432/project1_db'
