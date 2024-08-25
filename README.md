@@ -15,4 +15,4 @@ The application features user authentication, event filtering, and a responsive 
 Fyyur serves as a practical demonstration of the application of Flask and SQLAlchemy, with creation and managing of a 
 database in the backend, ensuring that the data is checked before it is passed to the database.
 
-<img src="0-Media/1-Gazebo_word_program_running.gif" width="900" height="400" />
+<img src="0-Media/1-Project_Fyyur_server_running.gif" width="900" height="400" />
