@@ -1,0 +1,117 @@
+Get in the right folder to development:
+
+$ cd /home/tiago/Desktop/Udacity/6-Full_stack_web_developer/1-Project_Fyyur/FSND/projects/01_fyyur/starter_code
+
+#############################################################################################
+psql -U <username> -d <database_name> -f <script_name.sql>
+
+Replace <username> with your PostgreSQL username, <database_name> with the 
+name of the database you want to connect to, and <script_name.sql> with the
+name of your script file.
+For example, if your username is "postgres", the database name is "mydatabase",
+and the script file is "myscript.sql", the command would look like this:
+
+To run the file sql_practice_exercises.sql:
+psql -U postgres -d postgres -f sql_practice_exercises.sql
+
+https://www.cherryservers.com/blog/how-to-install-and-setup-postgresql-server-on-ubuntu-20-04
+
+you can use this command to initialize, start, and restart the database server
+
+sudo service postgresql initdb
+sudo service postgresql start
+sudo service postgresql restart
+
+https://tableplus.com/blog/2018/10/how-to-start-stop-restart-postgresql-server.html
+
+Creation of databases using templates link bellow:
+https://www.postgresql.org/docs/9.5/manage-ag-templatedbs.html
+
+
+Login:
+$ sudo -u postgres psql
+
+Create db:
+
+$ CREATE DATABASE dbname;
+
+Useful basic psql commands
+psql <dbname> [<username>]
+
+Starts psql with a connection to dbname. Optionally use another user than current user
+
+In psql:
+
+
+
+List all databases on the server, their owners, and user access levels
+# \l
+
+Connect to a database named
+# \c <dbname>
+
+Show database tables
+# \dt
+
+Describe table schema
+# \d <tablename>
+
+Quit psql, return to the terminal
+# \q
+
+# \?
+
+
+###############################################################################################
+To start the app:
+
+export FLASK_APP=app.py
+export FLASK_ENV=development # enables debug mode
+python3 app.py
+
+###############################################################################################
+Migrations
+
+Have the documentation available as you work. Links:
+
+[Flask-Migrate documentation(opens in a new tab)](https://flask-migrate.readthedocs.io/en/latest/)
+[Alembic documentation](https://alembic.sqlalchemy.org/en/latest/)
+
+
+Add this code to your 'migrate_script.py'
+completed = db.Column(db.Boolean, nullable=False, default=False)
+
+In Terminal
+
+export FLASK_APP=app.py
+
+On first time create infraestructure:
+flask db init
+
+flask db migrate
+
+then
+
+flask db upgrade
+
+or flask db downgrade
+
+###############################################################################################
+
+To get a complete list of requirements for a given app, run:
+
+python -m pip freeze -r requirements.txt 
+
+###############################################################################################
+sqlalchemy cheet sheat
+
+https://www.codementor.io/@sheena/understanding-sqlalchemy-cheat-sheet-du107lawl
+
+Flask Login
+
+https://flask-login.readthedocs.io/en/latest/
+
+
+Flask Principal
+
+https://pythonhosted.org/Flask-Principal/
