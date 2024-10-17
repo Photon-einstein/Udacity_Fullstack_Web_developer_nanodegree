@@ -16,3 +16,19 @@ Fyyur serves as a practical demonstration of the application of Flask and SQLAlc
 database in the backend, ensuring that the data is checked before it is passed to the database.
 
 <img src="0-Media/1-Project_Fyyur_server_running.gif" width="900" height="400" />
+
+## 2 - Trivia App
+
+The Trivia App allows users to play quizzes by answering questions that are organized into different categories. The app provides functionality for:
+
+* Retrieving questions from a PostgreSQL database.
+* Filtering questions by category.
+* Searching for questions based on keywords.
+* Adding new questions.
+* Deleting questions.
+* Playing a quiz by randomly selecting questions from specific categories.
+
+The backend is developed using Python and Flask, while the database is managed with PostgreSQL.  
+The application is designed to follow RESTful API principles and includes unit tests for verifying its functionality.
+
+<img src="0-Media/2-Triva_App_running.gif" width="900" height="400" />
