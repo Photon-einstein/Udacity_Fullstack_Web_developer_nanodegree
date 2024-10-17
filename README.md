@@ -31,4 +31,4 @@ The Trivia App allows users to play quizzes by answering questions that are orga
 The backend is developed using Python and Flask, while the database is managed with PostgreSQL.  
 The application is designed to follow RESTful API principles and includes unit tests for verifying its functionality.
 
-<img src="0-Media/2-Triva_App_running.gif" width="900" height="400" />
+<img src="0-Media/2-Trivia_App_running.gif" width="900" height="400" />
