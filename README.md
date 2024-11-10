@@ -32,3 +32,29 @@ The backend is developed using Python and Flask, while the database is managed w
 The application is designed to follow RESTful API principles and includes unit tests for verifying its functionality.
 
 <img src="0-Media/2-Trivia_App_running.gif" width="900" height="400" />
+
+## 3 - Coffee Shop Full Stack App
+
+This project is a part of the Udacity Full Stack Web Developer Nanodegree program, showcasing skills in creating a complete web application with a focus on backend development, authentication, and API integration.
+
+## Project Overview
+
+The Coffee Shop Full Stack App allows users to manage drinks offered by a fictional coffee shop. The app includes a backend built with Python and Flask, and it’s secured with Auth0 for user authentication and authorization. The frontend is developed with modern web technologies to provide a smooth, interactive experience.
+
+## Features
+
+- **User Roles**: The app implements two roles:
+  - **Barista** - read-only access to view drinks.
+  - **Manager** - full access to create, update, and delete drinks.
+- **CRUD Operations**: Users with the appropriate permissions can create, read, update, and delete drinks.
+- **Authorization**: Uses JWT tokens and Auth0 to secure endpoints and manage access based on user roles.
+- **RESTful API**: Provides structured and secure API endpoints for frontend communication.
+- **Database Integration**: Stores drink information using PostgreSQL, including details like drink recipes and ingredient amounts.
+
+## Tech Stack
+
+- **Backend**: Python, Flask, SQLAlchemy, PostgreSQL, Auth0
+- **Frontend**: JavaScript, HTML/CSS
+- **Deployment**: Configured for easy deployment on services like Heroku or AWS
+
+<img src="0-Media/3-Coffee_shop_running.gif" width="900" height="400" />
