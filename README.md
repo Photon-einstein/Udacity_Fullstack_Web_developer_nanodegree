@@ -58,3 +58,9 @@ The Coffee Shop Full Stack App allows users to manage drinks offered by a fictio
 - **Deployment**: Configured for easy deployment on services like Heroku or AWS
 
 <img src="0-Media/3-Coffee_shop_running.gif" width="900" height="400" />
+
+
+https://github.com/user-attachments/assets/c42e9454-9d62-4f98-9385-4806a0804922
+
+
+
