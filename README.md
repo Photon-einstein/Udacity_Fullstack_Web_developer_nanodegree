@@ -33,6 +33,12 @@ The application is designed to follow RESTful API principles and includes unit t
 
 <img src="0-Media/2-Trivia_App_running.gif" width="900" height="400" />
 
+
+https://github.com/user-attachments/assets/a01999ee-cbf4-491d-a9f5-de9df82767da
+
+
+
+
 ## 3 - Coffee Shop Full Stack App
 
 This project is a part of the Udacity Full Stack Web Developer Nanodegree program, showcasing skills in creating a complete web application with a focus on backend development, authentication, and API integration.
@@ -56,9 +62,6 @@ The Coffee Shop Full Stack App allows users to manage drinks offered by a fictio
 - **Backend**: Python, Flask, SQLAlchemy, PostgreSQL, Auth0
 - **Frontend**: JavaScript, HTML/CSS
 - **Deployment**: Configured for easy deployment on services like Heroku or AWS
-
-<img src="0-Media/3-Coffee_shop_running.gif" width="900" height="400" />
-
 
 https://github.com/user-attachments/assets/c42e9454-9d62-4f98-9385-4806a0804922
 
