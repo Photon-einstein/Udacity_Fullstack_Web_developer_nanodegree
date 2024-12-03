@@ -59,5 +59,20 @@ The Coffee Shop Full Stack App allows users to manage drinks offered by a fictio
 
 https://github.com/user-attachments/assets/c42e9454-9d62-4f98-9385-4806a0804922
 
+## 4 - Server Deployment at AWS
+
+This project is an exercise in how to deploy an aplication into AWS, using containerization with Docker, Amazon Elastic Kubernetes 
+Service (EKS)  and cloud as CI best practice.
+
+Key Features:
+- Containerization: The application is containerized using Docker, allowing for consistent deployment across different environments.
+- AWS EKS: Deployed on Amazon Elastic Kubernetes Service (EKS) for orchestration and management of containerized applications.
+- Cloud Storage: Implements Amazon S3 for storing static assets and user-uploaded files, in this project a lambda function to
+serve as a replacement for import boto3 was used.
+- CI/CD Pipeline: Integrated with AWS CodePipeline for continuous integration and deployment, streamlining the development workflow.
+
+https://github.com/user-attachments/assets/db389ef8-7540-4875-a8fc-076b26ea6aac
+
+
 
 
