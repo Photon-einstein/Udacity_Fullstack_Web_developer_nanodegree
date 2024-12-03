@@ -130,10 +130,6 @@ kubectl get nodes
 
 -------------------------------------------------------------------------------------------------
 
-# Token
-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
-
--------------------------------------------------------------------------------------------------
 # Save a Secret in AWS Parameter Store
 aws ssm put-parameter --name JWT_SECRET --overwrite --value "myjwtsecret" --type SecureString
 ## Verify
