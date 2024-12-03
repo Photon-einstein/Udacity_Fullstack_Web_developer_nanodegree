@@ -1,0 +1,162 @@
+# Creation of a virtual environment
+python -m venv venv
+
+# Activation of the virtual environment
+source venv/bin/activate
+
+# Deactivating the virtual environment
+deactivate
+
+# Assuming you are in the cd0157-Server-Deployment-and-Containerization/ directory
+pip install -r requirements.txt
+
+# Setup of the JWT_SECRET and LOG_LEVEL
+export JWT_SECRET='myjwtsecret'
+export LOG_LEVEL=DEBUG
+
+# Confirmation of the JWT_SECRET and LOG_LEVEL values
+echo $JWT_SECRET
+echo $LOG_LEVEL
+
+# Run the application
+python main.py
+
+# Test the endpoint @APP.route('/', methods=['POST', 'GET'])
+curl --request GET http://localhost:8080/  | jq .
+
+# Access endpoint /auth
+export TOKEN=`curl --data '{"email":"t.l.sousa@gmail.com","password":"mypwd_haha"}' --header "Content-Type: application/json" -X POST localhost:8080/auth  | jq -r '.token'`
+
+# To check the token
+echo $TOKEN
+
+# Access endpoint /contents
+# You should see the email id that you passed in as one of the values
+curl --request GET 'http://localhost:8080/contents' -H "Authorization: Bearer ${TOKEN}" | jq .
+
+# Create a store for the environment variables
+touch .env_file 
+JWT_SECRET='myjwtsecret'
+LOG_LEVEL=DEBUG
+
+# To run the app in the docker follow the next steps:
+start the Docker Desktop service
+
+# Build an image, running the command from where the Dockerfile resides 
+docker build -t myimage .
+
+# Other useful commands in the docker
+# Check the list of images
+docker image ls
+# Remove any image
+docker image rm <image_id>
+
+# Create and run a container 
+docker run --name myContainer --env-file=.env_file -p 80:8080 myimage
+
+# Other useful commands
+# List running containers
+docker container ls
+docker ps
+# Stop a container
+docker container stop <container_id>
+# Remove a container
+docker container rm <container_id>
+
+# To check the endpoints
+
+# Flask server running inside a container
+curl --request GET 'http://localhost:80/'
+
+# Flask server running locally (only the port number is different)
+curl --request GET 'http://localhost:8080/'
+
+# Calls the endpoint 'localhost:80/auth' with the email/password as the message body. 
+# The return JWT token assigned to the environment variable 'TOKEN' 
+export TOKEN=`curl --data '{"email":"t.l.sousa@gmail.com","password":"LinuxPwd"}' --header "Content-Type: application/json" -X POST localhost:80/auth  | jq -r '.token'`
+echo $TOKEN
+
+# Decrypt the token and returns its content
+curl --request GET 'http://localhost:80/contents' -H "Authorization: Bearer ${TOKEN}" | jq .
+
+------------------------------------------------------------------------------------------------------------------
+# FIX to the connectivity of kubectl:
+Cloud9 overrides aws creds and the only way to get this working is to enforce env variables with the right values..
+I did something like this and it works
+export AWS_ACCESS_KEY_ID=xxx
+export AWS_SECRET_ACCESS_KEY=xxx
+export AWS_DEFAULT_REGION=us-east-2
+
+------------------------------------------------------------------------------------------------------------------
+
+# Retrieve kubectl version 
+kubectl version  -------------> Client Version: v1.31.0-eks-a737599
+
+# Creation of an EKS (Kubernetes) Cluster 
+# Create - Create an EKS cluster named “simple-jwt-api” in a region of your choice: 
+eksctl create cluster --name simple-jwt-api --nodes=2 --version=1.22 --instance-types=t2.medium --region=us-east-2
+
+# Verify the health of your cluster nodes 
+kubectl get nodes
+
+# Delete when the project is over
+eksctl delete cluster simple-jwt-api  --region=us-east-2  (TBD in the end)
+
+# Create an IAM Role for CodeBuild
+# Get your AWS account id 
+aws sts get-caller-identity --query Account --output text 
+
+# Create a role, 'UdacityFlaskDeployCBKubectlRole', using the trust.json trust relationship:
+aws iam create-role --role-name UdacityFlaskDeployCBKubectlRole --assume-role-policy-document file://trust.json --output text --query 'Role.Arn'
+
+# Attach the iam-role-policy.json policy to the 'UdacityFlaskDeployCBKubectlRole' as:
+aws iam put-role-policy --role-name UdacityFlaskDeployCBKubectlRole --policy-name eks-describe --policy-document file://iam-role-policy.json
+
+# Authorize the CodeBuild using EKS RBAC
+# Fetch - Get the current configmap and save it to a file:
+# Mac/Linux - The file will be created at `/System/Volumes/Data/private/tmp/aws-auth-patch.yml` path
+kubectl get -n kube-system configmap/aws-auth -o yaml > /tmp/aws-auth-patch.yml
+
+# Edit - Open the aws-auth-patch.yml file using any editor, such as VS code editor:
+# Mac/Linux
+code /System/Volumes/Data/private/tmp/aws-auth-patch.yml
+
+# Update - Update your cluster's configmap:
+# Mac/Linux
+kubectl patch configmap/aws-auth -n kube-system --patch "$(cat /tmp/aws-auth-patch.yml)"
+
+# Check the health of your clusters nodes:
+kubectl get nodes
+
+-------------------------------------------------------------------------------------------------
+
+# Token
+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
+
+-------------------------------------------------------------------------------------------------
+# Save a Secret in AWS Parameter Store
+aws ssm put-parameter --name JWT_SECRET --overwrite --value "myjwtsecret" --type SecureString
+## Verify
+aws ssm get-parameter --name JWT_SECRET
+
+# Once you submit your project and receive the reviews, you can consider deleting the variable from parameter-store using:
+aws ssm delete-parameter --name JWT_SECRET (TBD in the end)
+
+# To check the version of the kubectl in the client 
+kubectl version --client
+Client Version: v1.31.0-eks-a737599
+Kustomize Version: v5.4.2
+
+# Test your Endpoint - To test your API endpoints, get the external IP for your service:
+kubectl get services simple-jwt-api -o wide
+
+a5c36245609b04864aa1eec777991fd2-27298165.us-east-2.elb.amazonaws.com   
+
+# Test the API
+export TOKEN=`curl -d '{"email":"<EMAIL>","password":"<PASSWORD>"}' -H "Content-Type: application/json" -X POST http://a5c36245609b04864aa1eec777991fd2-27298165.us-east-2.elb.amazonaws.com//auth  | jq -r '.token'`
+
+curl --request GET 'http://a5c36245609b04864aa1eec777991fd2-27298165.us-east-2.elb.amazonaws.com/contents' -H "Authorization: Bearer ${TOKEN}" | jq 
+
+curl --request GET 'http://a5c36245609b04864aa1eec777991fd2-27298165.us-east-2.elb.amazonaws.com/' | jq 
+
+echo $TOKEN
