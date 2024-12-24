@@ -73,6 +73,23 @@ serve as a replacement for import boto3 was used.
 
 https://github.com/user-attachments/assets/db389ef8-7540-4875-a8fc-076b26ea6aac
 
+## 5 - Capstone project
 
+This project is the last one of the Full Stack Nanodegree of Udacity. 
 
+Main work topics in this project:
 
+1. Authorization using Auth0, using RBAC roles and jwt.
+2. Coding standart compliant PEP8 using black.
+3. Testing: all the endpoints were tested for good and bad weather using RBAC and error handling.
+4. The required setup information was provided.
+5. All the endpoints were properly documented.
+6. Database management using psql and database migrations.
+7. Deployment of the application into the cloud, using Heroku as a Cloud platform.
+
+The theme of this project is a Casting Agency.
+The Casting Agency models a company that is responsible  
+of creating movies and 
+managing and assigning actors to those movies.
+
+https://github.com/user-attachments/assets/e474df76-55bb-49a1-9144-ff05b4d87665
