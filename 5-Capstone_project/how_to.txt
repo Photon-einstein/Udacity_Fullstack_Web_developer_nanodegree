@@ -1,0 +1,72 @@
+# Creation of a virtual environment
+virtualenv venv
+source venv/bin/activate
+
+# Instalation of dependencies
+pip install -r requirements.txt
+
+# Deactivation of a virtual environment
+deactivate 
+
+# When needed the requirements can be freezed
+pip freeze > requirements.txt
+
+-----------------------------------------------------------
+
+# Login into the psql database 
+sudo -u postgres psql
+
+# Creation of a new database
+CREATE DATABASE Capstone_FSND_db;
+
+# Connection into the database 
+\c capstone_FSND_db
+
+# List databases 
+\l 
+
+# List relations inside the database 
+\dt 
+
+# Creation and population of the database 
+# \i capstone.psql
+
+# Clear the terminal inside psql 
+\! clear        or Crtl + L 
+
+-----------------------------------------------------------
+# Run the development server:
+
+# On Linux systems:
+export FLASK_APP=app
+export FLASK_ENV=development # enables debug mode
+
+# On Windows systems
+set FLASK_APP=app
+set FLASK_ENV=development # enables debug mode
+
+python3 app.py
+
+-----------------------------------------------------------
+
+# To migrate your local database to another database in the Heroku cloud, you will have to run these commands:
+python manage.py db init
+python manage.py db migrate -m "Initial migration"
+python manage.py db upgrade
+
+-----------------------------------------------------------
+
+Casting assistance token: 
+Casting Director token: 
+Executive Director token: 
+----------------------------------------------------------
+# To automatically format the entire project 
+black .
+
+----------------------------------------------------------
+To connect remotely to the database:
+
+heroku pg:psql --app capstone-project-photon
+
+Remote DB name: postgresql-animate-02141
+
