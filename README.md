@@ -93,3 +93,7 @@ of creating movies and
 managing and assigning actors to those movies.
 
 https://github.com/user-attachments/assets/e474df76-55bb-49a1-9144-ff05b4d87665
+
+## Certificate of completion
+
+[Certificate of graduation]()
