@@ -1,12 +1,12 @@
 #!/bin/bash
-export DATABASE_URL_PRODUCTION=postgresql://u7i4nqtm5oeoui:p1723f75dc5b469cff31c5d110d6c934026bf452f5682ec5ca1c98ccfa0812776@c9uss87s9bdb8n.cluster-czrs8kj4isg7.us-east-1.rds.amazonaws.com:5432/d54o9dqh2q1aig
-export DATABASE_URL_TEST=postgresql://u3l3g29eud05lt:pbf1ad7b6ca4ceec559706d9a09a0aa100b21042e2e0a7ff2b0e45989e6285bf5@cc0gj7hsrh0ht8.cluster-czrs8kj4isg7.us-east-1.rds.amazonaws.com:5432/df7odaihpkkuj7
+export DATABASE_URL_PRODUCTION=*************************************************
+export DATABASE_URL_TEST=*******************************************************
 
 export AUTH0_DOMAIN=dev-n8zlv2hv8difjmzx.us.auth0.com
 export ALGORITHMS=['RS256']
 export API_AUDIENCE=Capstone_project_API
 
-export CLIENT_ID=RoauVfHhdqz0dfUOC69lQL5VRmYPaIQW
+export CLIENT_ID=******************************************
 export AUTH0_CALLBACK_URL=https://capstone-project-photon-25f79f0bc990.herokuapp.com//success
 
 export CASTING_ASSISTANT_BEARER_TOKEN=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik5CZ0J3X2VUckFBeDRRQ2FfV3JITiJ9.eyJpc3MiOiJodHRwczovL2Rldi1uOHpsdjJodjhkaWZqbXp4LnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2NzViNGMxODIxZDAwODlkNzAwM2FmNTgiLCJhdWQiOiJDYXBzdG9uZV9wcm9qZWN0X0FQSSIsImlhdCI6MTczNDk3NTc2MCwiZXhwIjoxNzM1MDYyMTYwLCJzY29wZSI6IiIsImF6cCI6IlJvYXVWZkhoZHF6MGRmVU9DNjlsUUw1VlJtWVBhSVFXIiwicGVybWlzc2lvbnMiOlsiZ2V0OmFjdG9yIiwiZ2V0OmFjdG9ycyIsImdldDptb3ZpZSIsImdldDptb3ZpZXMiXX0.m5O35WGp_UawRs3GfKlJKlOzgfr8nlMrWMHCSkBxdUP4ZySnIcQaci8Lw2V57Tot636-B1YwSEV93v36hraXoE8NkOkISpz9cr3oXme-Cj5cMj3M_vtwBIfy3UDO8IbsEXxQBsSZ7B64UPNLuCRVXhm0fB8jDd-yqXe1HhtxJWBAnQggHylFAxNsKqn1Jw8eyil0qdIyJuM_cDn-PFA_Cfa_Z00_xWb4HDdlwM2p8mTcNxe_2phl7k5lK_zGcrdI_Hc0zVM59g5SYBV7z_scXOAl0Ei_qIPdIKJCGDW2Tp77ZMp0HyvP5XrW2C6qn1KLfSOS2_DzFO1ozmyuy5x41A
